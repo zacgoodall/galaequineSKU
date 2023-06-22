@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <div id="example">A1 B1</div>
+    <img id="target_image" src="oldImage.jpg">
+
+    <script>
+    $('.input_box').on('input', function() {
+        var inputVal = $(this).val().toUpperCase(); // Convert input to uppercase for case-insensitive matching
+        var options = $('#skuList option');
+        var minChars = 3; // Minimum number of characters for autocomplete suggestion
+        var matchedOptions = options.filter(function() {
+        var optionVal = $(this).val().toUpperCase(); // Convert option value to uppercase for case-insensitive matching
+        return optionVal.indexOf(inputVal) === 0 && inputVal.length >= minChars;
+        });
+
+        
+        if (matchedOptions.length === 0) {
+            $('#itemNameOutput').empty();
+            $('#binNumberOutput').empty(); // Clear the item name
+        }
+    });
+
+    $(document).ready(function() {
+        $('#myForm').submit(function(e) {
+            e.preventDefault(); // Prevent the default form submission
+
+            // The keywords to search for
+            var keywords = ["A1 B1", "A1 B2", "A2 B1", "A2 B2", "A3 B1", "A3 B2", "A3 B3", "A4 B1" ];
+
+
+            // Check if the exampleText includes any of the keywords
+            for (var i = 0; i < keywords.length; i++) {
+                if (exampleText.includes(keywords[i])) {
+                    // If it does, change the image source
+                    $('#A1B1img').css('display', 'block');
+                    break;
+                }
+            }
+
+            return false; // Return false to prevent further propagation
+        });
+
+        $('.input_box').on('keypress', function(e) {
+            if (e.which === 13) { // Check if the Enter key is pressed
+                e.preventDefault(); // Prevent the default form submission
+                $('#submit_button').click(); // Trigger the submit button click event
+            }
+        });
+    });
+    </script>
+</body>
+</html>

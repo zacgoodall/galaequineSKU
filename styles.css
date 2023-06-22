@@ -1,0 +1,164 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+header h1 {
+  background-color: goldenrod;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 60px;
+  
+}
+
+h2 {
+  background-color: goldenrod;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  width: 75%;
+  margin: auto;
+  margin-top: 20px; 
+}
+
+
+#submit_button {
+  width: 100px;
+  height: 40px;
+  background-color: goldenrod;
+  text-align: center;
+  cursor: pointer;
+}
+
+.input_box {
+  padding: 15px;
+  width: 150px;
+  margin-bottom: 20px;
+  touch-action: manipulation; /* Disable aggressive zooming */
+  -moz-user-focus: no; /* Disable user zooming */
+}
+
+img {
+  width: 90%;
+  height: auto;
+  margin: 5%;
+  margin-top: 5px;
+  border: 5px solid rgb(0, 0, 0);
+  border-radius: 20px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  touch-action: auto; /* Enable pinch zoom */
+}
+
+.styled_output {
+  background-color: #f2f2f2;
+  padding: 10px;
+  margin-bottom: 20px;
+  margin-top: 20px; /* Adjust the margin here */
+  text-align: center;
+  width: 90%;
+}
+
+.styled_output h3 {
+  color: #333;
+}
+
+.styled_output span {
+  font-weight: bold;
+} 
+
+
+.styled_notification{
+  background-color: rgb(155, 155, 155);
+  padding-left: 30;
+  padding-right: 30px;
+  text-align: center;
+  display: none;
+}
+
+
+img.landscape {
+  transform: rotate(90deg);
+  width: 100vh;
+  height: 100vw;
+  margin: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+#fullscreen-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.8); /* Adjust the opacity as desired */
+  z-index: 9999;
+  overflow: hidden;
+}
+
+#fullscreen-image img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(90deg);
+  max-width: 110%;
+  max-height: 100%;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  transform: scale(2);
+}
+
+
+
+/* -------------------------This is the variables with img on them, it keeps them hidden unless shown otherwise-------------*/
+/* #A1B1img, #A1B1-2img, #A1B2img,
+#A2B1img, #A2B1-2img, #A2B2img,
+#A3B1img, #A3B1-2img, #A3B2img, #A3B2-3img, #A3B1-3img, #A3B3img,
+#A4B1img, #A4B1-2img, #A4B2img, #A4B2-3img, #A4B1-3img, #A4B3img,
+#A5B1img, #A5B1-2img, #A5B2img, #A5B2-3img, #A5B1-3img, #A5B3img,
+#A6B1img, #A6B1-2img, #A6B2img, #A6B2-3img, #A6B1-3img, #A6B3img,
+#A7B1img, #A7B1-2img, #A7B2img, #A7B2-3img, #A7B1-3img, #A7B3img,
+#A8B1img, #A8B1-2img, #A8B2img, #A8B2-3img, #A8B1-3img, #A8B3img,
+
+#A9img,
+#A10img,
+#A11img,
+#A12img,
+
+#A13B1img, #A13B2img, #A13B3img, #A13B4img, #A13B1-2img, #A13B2-3img, #A13B3-4img, #A13B1-3img, #A13B2-4img, #A13B1-4img,
+#A14B1img, #A14B2img, #A14B3img, #A14B4img, #A14B1-2img, #A14B2-3img, #A14B3-4img, #A14B1-3img, #A14B2-4img, #A14B1-4img,
+#A15B1img, #A15B2img, #A15B3img, #A15B4img, #A15B1-2img, #A15B2-3img, #A15B3-4img, #A15B1-3img, #A15B2-4img, #A15B1-4img,
+#A16B1img, #A16B2img, #A16B3img, #A16B4img, #A16B1-2img, #A16B2-3img, #A16B3-4img, #A16B1-3img, #A16B2-4img, #A16B1-4img,
+#A17B1img, #A17B2img, #A17B3img, #A17B4img, #A17B1-2img, #A17B2-3img, #A17B3-4img, #A17B1-3img, #A17B2-4img, #A17B1-4img,
+#A18B1img, #A18B2img, #A18B3img, #A18B4img, #A18B1-2img, #A18B2-3img, #A18B3-4img, #A18B1-3img, #A18B2-4img, #A18B1-4img,
+#SHOWROOMimg,
+#UNDERMEZimg {
+  display: none;
+} */
+
+
+
+
+
+
+
+
+
+@media (max-width: 1500px) {
+  header h1 {
+    font-size: 25px;
+  }
+}

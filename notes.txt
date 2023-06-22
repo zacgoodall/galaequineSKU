@@ -1,0 +1,113 @@
+NOTES FOR GALA EQUINE PROJECT
+
+To do List:
+
+
+incorparte A1 B1-3 S1 types of bin numbers:
+Finish store location walk
+make all images for floor map system
+if Section (S) is above S4 Put not above map saying "you will need a wave or ladder
+Check how program looks on mobile
+
+format for 1 of the main data entries:
+
+ {
+  'SKU Code': 'NO Sku',
+  'BIN Number': 'A8 S3',
+  'Product': 'Diamond Ripstop Tail Bag Only - Red & Navy Separates'
+ },
+
+
+big ol list for tonight:
+
+A1 B1-2 A2 B1-2 A3 B1-2 A3 B2-3 A3 B1-3 A4 B1-2 A4 B2-3 A4 B1-3 A5 B1-2 A5 B2-3 A5 B1-3 A6 B1-2 A6 B2-3 A6 B1-3 A7 B1-2 A7 B2-3 A7 B1-3 A8 B1-2 A8 B2-3 A8 B1-3 A13 B1-2 A13 B2-3 A13 B3-4 A13 B1-3 A13 B2-4 A13 B1-4 A13 B4 A13 B2-4 A14 B1 A14 B2 A14 B3 A14 B4 A14 B2-3 A14 B3-4 A14 B1-3 A14 B2-4 A14 B1-4 A15 B1 A15 B2 A15 B3 A15 B4 A15 B2-3 A15 B3-4 A15 B1-3 A15 B2-4 A15 B1-4 A16 B1 A16 B2 A16 B3 A16 B4 A16 B2-3 A16 B3-4 A16 B1-3 A16 B2-4 A16 B1-4 A17 B1 A17 B2 A17 B3 A17 B4 A17 B2-3 A17 B3-4 A17 B1-3 A17 B2-4 A17 B1-4 A18 B1 A18 B2 A18 B3 A18 B4 A18 B2-3 A18 B3-4 A18 B1-3 A18 B2-4 A18 B1-4
+
+A10 no keyword tested
+
+WRNCMBUR
+
+A1 B1 example SKU
+FRNCRN
+
+A2 B2
+MRHTBBW
+
+A2 B1
+LSDNLILPUR
+
+CHeck this sku code for an error:
+RRUGRN
+
+
+
+
+
+IGA Example OML
+    {
+  'Last 4 barcode digits': '1234',
+  'Location in shop': 'Aisle 10, Shelf 4',
+  'Product': 'Norco Full Cream Milk, 2 Litres'
+  'Full Barcode': '1234567'
+ },
+
+
+
+
+
+
+
+
+
+
+
+Put this back in css later
+
+@media (max-width: 1500px) {
+  header h1 {
+    font-size: 50px;
+    margin-top: 40px;
+    margin-bottom: 20px; /* Add a bottom margin to create space */
+    zoom: 150%;
+  }
+  
+  .input_box {
+    width: 400px;
+    height: 50px;
+    padding: 10px;
+    margin-bottom: 20px; /* Add a bottom margin to create space */
+    zoom: 150%;
+  }
+  
+  #submit_button {
+    width: 200px;
+    height: 50px;
+    font-size: 16px;
+    margin-bottom: 20px; /* Add a bottom margin to create space */
+    zoom: 160%;
+    text-align: center;
+  }
+  
+  .styled_output {
+    margin-bottom: 20px; /* Add a bottom margin to create space */
+    zoom: 150%;
+  }
+
+  .close-button {
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    transform: scale(3);
+  }
+}
+
+@media (orientation: landscape) {
+  body {
+    orientation: portrait;
+  }
+}
+
+
+

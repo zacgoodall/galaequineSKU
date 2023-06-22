@@ -1,0 +1,193 @@
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gala Equine SKU Locater</title>
+  <meta name="apple-mobile-web-app-title" content="Gala Equine SKU Location System">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <link rel="apple-touch-icon" href="galalogo.png">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link href="styles.css" rel="stylesheet" />
+  <script>
+    document.addEventListener('touchstart', function() {}, { passive: true });
+  </script>
+</head>
+<body>
+  <script src="script.js"></script>
+
+  <header>
+    <h1>Gala Equine SKU Location System</h1>
+  </header>
+
+  
+  <form id="myForm">
+    <input type="text" class="input_box" placeholder="Enter SKU" list="skuList">
+    <datalist id="skuList" id="autocompleteList"></datalist>
+  </form>
+  
+
+  <button id="submit_button" onclick="submitForm()">Submit</button>
+  
+  
+  <div class="styled_output">
+    <h3>BIN Number: <span id="binNumberOutput"></span></h3>
+    <h3>Item Name: <span id="itemNameOutput"></span></h3>
+  </div>
+
+
+    <!------Map Updated Popup-------->
+  <div class="styled_notification">
+    <h4>Map Updated! <span id="map_update_notification"></span></h4>
+  </div>
+
+
+
+  <div class="map_section" id="map_section">
+    <h2>Gala Floor Map</h2>
+  </div>
+
+
+  <!----------------------------------This is the data list of images for the Floor map update code-------------------------->
+  <!--------------------src is the photo name, id is to relate to imageid in jquery, class is  to hide them all indivually when no match found -->
+  <!-----------------------------REMEMBER TO LOG THE IDS INTO THE CSS TO HIDE THEM WHEN PROGRAM OPENS--------------------------------->
+  <div id="mapimg">
+    <img src="floor_map.png" alt="Your Image" id="main_image">
+    <!-- <img src="A1 B1.png" alt="Your Image" id="A1B1img" class="sku_image"> -->
+    <!-- <img src="A1 B1-2.png" alt="Your Image" id="A1B1-2img" class="sku_image">
+    <img src="A1 B2.png" alt="Your Image" id="A1B2img" class="sku_image">
+
+    <img src="A2 B1.png" alt="Your Image" id="A2B1img" class="sku_image">
+    <img src="A2 B1-2.png" alt="Your Image" id="A2B1-2img" class="sku_image">
+    <img src="A2 B2.png" alt="Your Image" id="A2B2img" class="sku_image">
+
+    <img src="A3 B1.png" alt="Your Image" id="A3B1img" class="sku_image">
+    <img src="A3 B2.png" alt="Your Image" id="A3B2img" class="sku_image">
+    <img src="A3 B3.png" alt="Your Image" id="A3B3img" class="sku_image">
+    <img src="A3 B1-2.png" alt="Your Image" id="A3B1-2img" class="sku_image">
+    <img src="A3 B2-3.png" alt="Your Image" id="A3B2-3img" class="sku_image">
+    <img src="A3 B1-3.png" alt="Your Image" id="A3B1-3img" class="sku_image">
+
+    <img src="A4 B1.png" alt="Your Image" id="A4B1img" class="sku_image">
+    <img src="A4 B2.png" alt="Your Image" id="A4B2img" class="sku_image">
+    <img src="A4 B3.png" alt="Your Image" id="A4B3img" class="sku_image">
+    <img src="A4 B1-2.png" alt="Your Image" id="A4B1-2img" class="sku_image">
+    <img src="A4 B2-3.png" alt="Your Image" id="A4B2-3img" class="sku_image">
+    <img src="A4 B1-3.png" alt="Your Image" id="A4B1-3img" class="sku_image">
+
+    <img src="A5 B1.png" alt="Your Image" id="A5B1img" class="sku_image">
+    <img src="A5 B2.png" alt="Your Image" id="A5B2img" class="sku_image">
+    <img src="A5 B3.png" alt="Your Image" id="A5B3img" class="sku_image">
+    <img src="A5 B1-2.png" alt="Your Image" id="A5B1-2img" class="sku_image">
+    <img src="A5 B2-3.png" alt="Your Image" id="A5B2-3img" class="sku_image">
+    <img src="A5 B1-3.png" alt="Your Image" id="A5B1-3img" class="sku_image">
+
+    <img src="A6 B1.png" alt="Your Image" id="A6B1img" class="sku_image">
+    <img src="A6 B2.png" alt="Your Image" id="A6B2img" class="sku_image">
+    <img src="A6 B3.png" alt="Your Image" id="A6B3img" class="sku_image">
+    <img src="A6 B1-2.png" alt="Your Image" id="A6B1-2img" class="sku_image">
+    <img src="A6 B2-3.png" alt="Your Image" id="A6B2-3img" class="sku_image">
+    <img src="A6 B1-3.png" alt="Your Image" id="A6B1-3img" class="sku_image">
+    
+    <img src="A7 B1.png" alt="Your Image" id="A7B1img" class="sku_image">
+    <img src="A7 B2.png" alt="Your Image" id="A7B2img" class="sku_image">
+    <img src="A7 B3.png" alt="Your Image" id="A7B3img" class="sku_image">
+    <img src="A7 B1-2.png" alt="Your Image" id="A7B1-2img" class="sku_image">
+    <img src="A7 B2-3.png" alt="Your Image" id="A7B2-3img" class="sku_image">
+    <img src="A7 B1-3.png" alt="Your Image" id="A7B1-3img" class="sku_image">
+
+    <img src="A8 B1.png" alt="Your Image" id="A8B1img" class="sku_image">
+    <img src="A8 B2.png" alt="Your Image" id="A8B2img" class="sku_image">
+    <img src="A8 B3.png" alt="Your Image" id="A8B3img" class="sku_image">
+    <img src="A8 B1-2.png" alt="Your Image" id="A8B1-2img" class="sku_image">
+    <img src="A8 B2-3.png" alt="Your Image" id="A8B2-3img" class="sku_image">
+    <img src="A8 B1-3.png" alt="Your Image" id="A8B1-3img" class="sku_image">
+
+    <img src="A9.png" alt="Your Image" id="A9img" class="sku_image">
+    <img src="A10.png" alt="Your Image" id="A10img" class="sku_image">
+    <img src="A11.png" alt="Your Image" id="A11img" class="sku_image">
+    <img src="A12.png" alt="Your Image" id="A12img" class="sku_image">
+
+    <img src="A13 B1.png" alt="Your Image" id="A13B1img" class="sku_image">
+    <img src="A13 B2.png" alt="Your Image" id="A13B2img" class="sku_image">
+    <img src="A13 B3.png" alt="Your Image" id="A13B3img" class="sku_image">
+    <img src="A13 B4.png" alt="Your Image" id="A13B4img" class="sku_image">
+    <img src="A13 B1-2.png" alt="Your Image" id="A13B1-2img" class="sku_image">
+    <img src="A13 B2-3.png" alt="Your Image" id="A13B2-3img" class="sku_image">
+    <img src="A13 B3-4.png" alt="Your Image" id="A13B3-4img" class="sku_image">
+    <img src="A13 B1-3.png" alt="Your Image" id="A13B1-3img" class="sku_image">
+    <img src="A13 B2-4.png" alt="Your Image" id="A13B2-4img" class="sku_image">
+    <img src="A13 B1-4.png" alt="Your Image" id="A13B1-4img" class="sku_image">
+
+    <img src="A14 B1.png" alt="Your Image" id="A14B1img" class="sku_image">
+    <img src="A14 B2.png" alt="Your Image" id="A14B2img" class="sku_image">
+    <img src="A14 B3.png" alt="Your Image" id="A14B3img" class="sku_image">
+    <img src="A14 B4.png" alt="Your Image" id="A14B4img" class="sku_image">
+    <img src="A14 B1-2.png" alt="Your Image" id="A14B1-2img" class="sku_image">
+    <img src="A14 B2-3.png" alt="Your Image" id="A14B2-3img" class="sku_image">
+    <img src="A14 B3-4.png" alt="Your Image" id="A14B3-4img" class="sku_image">
+    <img src="A14 B1-3.png" alt="Your Image" id="A14B1-3img" class="sku_image">
+    <img src="A14 B2-4.png" alt="Your Image" id="A14B2-4img" class="sku_image">
+    <img src="A14 B1-4.png" alt="Your Image" id="A14B1-4img" class="sku_image">
+
+    <img src="A15 B1.png" alt="Your Image" id="A15B1img" class="sku_image">
+    <img src="A15 B2.png" alt="Your Image" id="A15B2img" class="sku_image">
+    <img src="A15 B3.png" alt="Your Image" id="A15B3img" class="sku_image">
+    <img src="A15 B4.png" alt="Your Image" id="A15B4img" class="sku_image">
+    <img src="A15 B1-2.png" alt="Your Image" id="A15B1-2img" class="sku_image">
+    <img src="A15 B2-3.png" alt="Your Image" id="A15B2-3img" class="sku_image">
+    <img src="A15 B3-4.png" alt="Your Image" id="A15B3-4img" class="sku_image">
+    <img src="A15 B1-3.png" alt="Your Image" id="A15B1-3img" class="sku_image">
+    <img src="A15 B2-4.png" alt="Your Image" id="A15B2-4img" class="sku_image">
+    <img src="A15 B1-4.png" alt="Your Image" id="A15B1-4img" class="sku_image">
+
+    <img src="A16 B1.png" alt="Your Image" id="A16B1img" class="sku_image">
+    <img src="A16 B2.png" alt="Your Image" id="A16B2img" class="sku_image">
+    <img src="A16 B3.png" alt="Your Image" id="A16B3img" class="sku_image">
+    <img src="A16 B4.png" alt="Your Image" id="A16B4img" class="sku_image">
+    <img src="A16 B1-2.png" alt="Your Image" id="A16B1-2img" class="sku_image">
+    <img src="A16 B2-3.png" alt="Your Image" id="A16B2-3img" class="sku_image">
+    <img src="A16 B3-4.png" alt="Your Image" id="A16B3-4img" class="sku_image">
+    <img src="A16 B1-3.png" alt="Your Image" id="A16B1-3img" class="sku_image">
+    <img src="A16 B2-4.png" alt="Your Image" id="A16B2-4img" class="sku_image">
+    <img src="A16 B1-4.png" alt="Your Image" id="A16B1-4img" class="sku_image">
+
+    <img src="A17 B1.png" alt="Your Image" id="A17B1img" class="sku_image">
+    <img src="A17 B2.png" alt="Your Image" id="A17B2img" class="sku_image">
+    <img src="A17 B3.png" alt="Your Image" id="A17B3img" class="sku_image">
+    <img src="A17 B4.png" alt="Your Image" id="A17B4img" class="sku_image">
+    <img src="A17 B1-2.png" alt="Your Image" id="A17B1-2img" class="sku_image">
+    <img src="A17 B2-3.png" alt="Your Image" id="A17B2-3img" class="sku_image">
+    <img src="A17 B3-4.png" alt="Your Image" id="A17B3-4img" class="sku_image">
+    <img src="A17 B1-3.png" alt="Your Image" id="A17B1-3img" class="sku_image">
+    <img src="A17 B2-4.png" alt="Your Image" id="A17B2-4img" class="sku_image">
+    <img src="A17 B1-4.png" alt="Your Image" id="A17B1-4img" class="sku_image">
+
+    <img src="A18 B1.png" alt="Your Image" id="A18B1img" class="sku_image">
+    <img src="A18 B2.png" alt="Your Image" id="A18B2img" class="sku_image">
+    <img src="A18 B3.png" alt="Your Image" id="A18B3img" class="sku_image">
+    <img src="A18 B4.png" alt="Your Image" id="A18B4img" class="sku_image">
+    <img src="A18 B1-2.png" alt="Your Image" id="A18B1-2img" class="sku_image">
+    <img src="A18 B2-3.png" alt="Your Image" id="A18B2-3img" class="sku_image">
+    <img src="A18 B3-4.png" alt="Your Image" id="A18B3-4img" class="sku_image">
+    <img src="A18 B1-3.png" alt="Your Image" id="A18B1-3img" class="sku_image">
+    <img src="A18 B2-4.png" alt="Your Image" id="A18B2-4img" class="sku_image">
+    <img src="A18 B1-4.png" alt="Your Image" id="A18B1-4img" class="sku_image">
+
+    <img src="SHOWROOM.png" alt="Your Image" id="SHOWROOMimg" class="sku_image">
+    <img src="UNDER MEZ.png" alt="Your Image" id="UNDERMEZimg" class="sku_image"> -->
+
+
+  <div>
+
+
+
+  <!-- <div id="fullscreen-image">
+    <span class="close-button">&times;</span>
+    <img src="" alt="Fullscreen Image">
+  </div> -->
+
+
+</body>
+</html>
